@@ -8,7 +8,7 @@ import (
 
 type Msg struct {
 	Name    string
-	Contetn string
+	Content string
 }
 
 type Eventer interface {

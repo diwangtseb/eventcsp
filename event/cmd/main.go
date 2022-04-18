@@ -20,7 +20,7 @@ func main() {
 		for i := 0; i < 10; i++ {
 			e.Collect(context.Background(), event.Msg{
 				Name:    strconv.Itoa(i),
-				Contetn: "hello world",
+				Content: "hello world",
 			})
 		}
 	}()
