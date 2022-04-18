@@ -2,12 +2,13 @@ package main
 
 import (
 	"context"
-	event "eventcsp/event/pkg"
 	"fmt"
 	"os"
 	"os/signal"
 	"strconv"
 	"syscall"
+
+	event "github.com/diwangtseb/eventcsp/event/pkg"
 )
 
 func main() {
