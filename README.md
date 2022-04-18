@@ -1,2 +1,2 @@
 # eventcsp
-Used to collect send manage  events 
+Used to collect send process events 
