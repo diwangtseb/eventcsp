@@ -33,8 +33,10 @@ func NewEvent(dsn string, buffer int, handler Handler) *Event {
 	}
 }
 
-func (e *Event) Collect(ctx context.Context, msg Msg) {
-	e.ch <- &msg
+func (e *Event) Collect(ctx context.Context, msg ...Msg) {
+	for _, m := range msg {
+		e.ch <- &m
+	}
 }
 
 func (e *Event) StartProcess() {
