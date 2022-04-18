@@ -1,4 +1,4 @@
-module eventcsp
+module github.com/diwangtseb/eventcsp
 
 go 1.17
 
