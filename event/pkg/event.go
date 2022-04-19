@@ -3,6 +3,7 @@ package pkg
 import (
 	"context"
 	"database/sql"
+	"os"
 
 	"github.com/sirupsen/logrus"
 )
@@ -35,7 +36,12 @@ func NewEvent(dsn string, buffer int, handler Handler) *Event {
 
 func (e *Event) Collect(ctx context.Context, msg ...Msg) {
 	for _, m := range msg {
-		e.ch <- &m
+		select {
+		case <-ctx.Done():
+			os.Exit(0)
+		default:
+			e.ch <- &m
+		}
 	}
 }
 
